@@ -18,7 +18,7 @@ export class Certificados extends connect(store)(LitElement) {
   @property({type: String}) 
   private _page : string = '';
 
-  /* usuario de ejemplo para certificados */
+  /* usuario de ejemplo para certificados, deberia salir del storage! */
   @property({type: Object})
   private _user : any =  {
       nombre: 'Estudiante Ejemplo',
@@ -105,7 +105,7 @@ export class Certificados extends connect(store)(LitElement) {
       ${this._user && this._page === 'certificado-alumno-regular'? html`
       <!-- Renderizamos el contenido -->
       <table>
-        <tr>CERTIFIADO DE EJEMPLO (Deberia ser pdf)</tr>
+        <tr>CERTIFICADO DE EJEMPLO (Deberia ser pdf)</tr>
         <tr>${this._user.nombre}</tr>
         <tr>${this._user.sede}</tr>
         <tr>${this._user.carrera}</tr>

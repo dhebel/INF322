@@ -65,7 +65,8 @@ const loadPage: ActionCreator<ThunkResult> = (page: string) => (dispatch) => {
         } 
         break;
     case 'certificado-alumno-regular':
-      import('../components/my-certificados.js');
+      import('../components/my-certificados').then((_module) => {
+      });
       break;
     default:
       page = 'view404';

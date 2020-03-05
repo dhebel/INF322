@@ -40,6 +40,7 @@ import './snack-bar.js';
 
 // Aqui se importan los componentes.
 import './my-reportes';
+import './my-certificados';
 import './horario-clases';
 
 @customElement('main-page')
@@ -142,8 +143,6 @@ export class MainPage extends connect(store)(LitElement) {
         </div>
            
         <div id="nav-bar">
-        <a ?selected="${this._page === 'resumen-academico'}" href="resumen-academico/">Resumen Academico</a>
-        <a ?selected="${this._page === 'certificado-alumno-regular'}" href="certificado-alumno-regular/">Certificados</a>
         </div>   
            
         <div id="content">
@@ -153,7 +152,6 @@ export class MainPage extends connect(store)(LitElement) {
 
             <my-reportes class="component-margin" ?active="${this._page === 'my-reportes'}"></my-reportes>
             
-
             <my-certificados class="component-margin" ?active="${this._page === 'my-certificados'}"></my-certificados>
 
         </div>
