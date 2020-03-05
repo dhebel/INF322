@@ -98,14 +98,15 @@ export class Certificados extends connect(store)(LitElement) {
         <button class="dropbtn">Certificados</button>
         <div class="dropdown-content">
           <a href="certificado-alumno-regular/">Certificado de alumno regular</a>
+          <!-- Debe generar un pdf mas o menos con la informacion que en este momento se renderiza -->
         </div>
       </div>
 
-      <!-- Contenido Certifiado de alumno regular -->
+      <!-- Contenido Certificado de alumno regular -->
       ${this._user && this._page === 'certificado-alumno-regular'? html`
       <!-- Renderizamos el contenido -->
       <table>
-        <tr>CERTIFICADO DE EJEMPLO (Deberia ser pdf)</tr>
+        <tr>CERTIFICADO DE EJEMPLO (Deberia ser generado como un pdf)</tr>
         <tr>${this._user.nombre}</tr>
         <tr>${this._user.sede}</tr>
         <tr>${this._user.carrera}</tr>
