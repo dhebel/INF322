@@ -141,7 +141,10 @@ export class MainPage extends connect(store)(LitElement) {
             Sesión de ALUMNO NOMBRE APELLIDO
         </div>
            
-        <div id="nav-bar"></div>
+        <div id="nav-bar">
+        <a ?selected="${this._page === 'resumen-academico'}" href="resumen-academico/">Resumen Academico</a>
+        <a ?selected="${this._page === 'certificado-alumno-regular'}" href="certificado-alumno-regular/">Certificados</a>
+        </div>   
            
         <div id="content">
             <!-- ACA está la utilización del componente, para pasarle datos usen un punto '.' más
@@ -149,6 +152,9 @@ export class MainPage extends connect(store)(LitElement) {
             <horario-clases class="component-margin" .cursos="${this._cursos}"></horario-clases> -->
 
             <my-reportes class="component-margin" ?active="${this._page === 'my-reportes'}"></my-reportes>
+            
+
+            <my-certificados class="component-margin" ?active="${this._page === 'my-certificados'}"></my-certificados>
 
         </div>
 

@@ -64,6 +64,9 @@ const loadPage: ActionCreator<ThunkResult> = (page: string) => (dispatch) => {
             dispatch(selectPlanEstudiante(parsedPath[1]));
         } 
         break;
+    case 'certificado-alumno-regular':
+      import('../components/my-certificados.js');
+      break;
     default:
       page = 'view404';
       import('../components/my-view404.js');
