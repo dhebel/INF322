@@ -48,7 +48,7 @@ export class MainPage extends connect(store)(LitElement) {
   private _cursos: ListaCursos = {};
 
   @property({type: Boolean})
-  private _loggedIn: boolean = false;
+  private _loggedIn: boolean = true;
 
   @property({type: String})
   private _page: string = '';
@@ -123,7 +123,7 @@ export class MainPage extends connect(store)(LitElement) {
   }
 
   _logIn () {
-    this._loggedIn = true; //(Math.random() > .5);
+    this._loggedIn = (Math.random() > .25);
     if (!this._loggedIn) {
         alert('try again!');
     }
