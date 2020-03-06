@@ -106,7 +106,7 @@ export class Certificados extends connect(store)(LitElement) {
       ${this._user && this._page === 'certificado-alumno-regular'? html`
       <!-- Renderizamos el contenido -->
       <table>
-        <tr>CERTIFICADO DE EJEMPLO (Deberia ser generado como un pdf)</tr>
+        <tr>Información que deberia contener el certificado: (Deberia ser generado como un pdf)</tr>
         <tr>${this._user.nombre}</tr>
         <tr>${this._user.sede}</tr>
         <tr>${this._user.carrera}</tr>
