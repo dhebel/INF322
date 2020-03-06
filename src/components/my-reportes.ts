@@ -135,8 +135,9 @@ export class Reportes extends connect(store)(LitElement) {
 
       <!-- Luego de los menus mostramos el contenido dependiendo de la pagina -->
       ${this._user && this._page === 'resumen-academico' && this._selectedPlan >= 0? html`
-      <!-- Renderizamos el contenido -->
+      <!-- Renderizamos el contenido --> <td>
       <table>
+        <tr>Plan de estudios: ${this._selectedPlan}</tr>
         ${this._user.notas.filter((nota:any) => nota.plan === this._selectedPlan).map((nota:any) => html`
         <tr>
             <td>${nota.fecha}</td>
