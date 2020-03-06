@@ -91,7 +91,7 @@ export class Certificados extends connect(store)(LitElement) {
   protected render() {
     /* Para ir a las secciones respectivas podemos simplemente cambiar la pagina.
      * OJO: es necesario agregar las paginas validas en actions/app.ts */
-    return html`
+    return html`  
       <h2>Certificados</h2>
 
       <div class="dropdown">
