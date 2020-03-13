@@ -135,9 +135,43 @@ export class Reportes extends connect(store)(LitElement) {
 
       <!-- Luego de los menus mostramos el contenido dependiendo de la pagina -->
       ${this._user && this._page === 'resumen-academico' && this._selectedPlan >= 0? html`
-      <!-- Renderizamos el contenido --> <td>
-      <table>
-        <tr>Plan de estudios: ${this._selectedPlan}</tr>
+      <!-- Renderizamos el contenido --> 
+      <hr>
+      <table style="width:100%">
+        <tr>
+          <td><b>Nombre</b></td>
+          <td>${this._user.nombre}</td> 
+        </tr>
+        <tr>
+          <td><b>Rut</b></td>
+          <td>${this._user.rut}</td> 
+        </tr>
+        <tr>
+          <td><b>Rol</b></td>
+          <td>${this._user.rol}</td> 
+        </tr>
+        <tr>
+          <td><b>Plan</b></td>
+          <td>${this._selectedPlan}</td> 
+        </tr>
+        <tr>
+          <td><b>Carrea</b></td>
+          <td>${this._selectedPlan} .nombre? (Obtener nombre plan)</td> 
+        </tr>
+        <tr>
+          <td><b>Fecha Emisión</b></td>
+          <td>${Date()}</td> 
+        </tr>
+      </table>
+      
+      <hr>
+
+      <table style="width:100%">
+        <tr>
+            <td><b>Fecha</b></td>
+            <td><b>Asignatura</b></td>
+            <td><b>Nota</b></td>
+        </tr>
         ${this._user.notas.filter((nota:any) => nota.plan === this._selectedPlan).map((nota:any) => html`
         <tr>
             <td>${nota.fecha}</td>
@@ -146,6 +180,7 @@ export class Reportes extends connect(store)(LitElement) {
         </tr>
         `)}
       </table>
+      <hr>
       `:''}
     `;
   
