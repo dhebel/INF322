@@ -105,15 +105,54 @@ export class Certificados extends connect(store)(LitElement) {
       <!-- Contenido Certificado de alumno regular -->
       ${this._user && this._page === 'certificado-alumno-regular'? html`
       <!-- Renderizamos el contenido -->
-      <table>
-        <tr>Información que deberia contener el certificado: (Deberia ser generado como un pdf)</tr>
-        <tr>${this._user.nombre}</tr>
-        <tr>${this._user.sede}</tr>
-        <tr>${this._user.carrera}</tr>
-        <tr>${this._user.rut}</tr>
-        <tr>${this._user.calidad}</tr>
-        <tr>${this._user.estado}</tr>
+      <hr>
+      <center>
+      <img src="images/utfsm.gif" alt="Logo universidad utfsm" width="200" height="100"> <br>
+      <b>DIRECCIÓN DE ESTUDIOS</b>
+      </center>
+      <hr>
+      <hr>
+      <center>CERTIFICADO DE ALUMNO REGULAR</center>
+      <hr>
+      <center>
+      <table style="width:100%">
+        <tr>
+          <td><b>FOLIO</b></td>
+          <td>: DE-${Math.random()}/2020</td> 
+        </tr>
+        <tr>
+          <td><b>CÓDIGO DE VERIFICACIÓN</b></td>
+          <td>: ${Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)}</td> 
+        </tr>
+        <tr>
+          <td><b>NOMBRE ALUMNO</b></td>
+          <td>: ${this._user.nombre}</td> 
+        </tr>
+        <tr>
+          <td><b>CAMPUS/SEDE</b></td>
+          <td>: ${this._user.sede}</td> 
+        </tr>
+        <tr>
+          <td><b>CARRERA<b></td>
+          <td>: ${this._user.carrera}</td> 
+        </tr>
+        <tr>
+          <td><b>RUT</b></td>
+          <td>: ${this._user.rut}</td> 
+        </tr>
+        <tr>
+          <td><b>CALIDAD ACADÉMICA</b></td>
+          <td>: ${this._user.calidad}</td> 
+        </tr>
+        <tr>
+          <td><b>ESTADO</b></td>
+          <td>: ${this._user.estado}</td> 
+        </tr>
       </table>
+      </center>
+      <hr>
+      Fecha de emisión: ${Date()}
+      
       `:''}
     `;
   

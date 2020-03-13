@@ -143,17 +143,21 @@ export class MainPage extends connect(store)(LitElement) {
         </div>
            
         <div id="nav-bar">
-        </div>   
+        </div>
            
         <div id="content">
-            <!-- ACA está la utilización del componente, para pasarle datos usen un punto '.' más
-                 el nombre de la variable del componente (public) 
-            <horario-clases class="component-margin" .cursos="${this._cursos}"></horario-clases> -->
+          <!-- ACA está la utilización del componente, para pasarle datos usen un punto '.' más
+                el nombre de la variable del componente (public) 
+          <horario-clases class="component-margin" .cursos="${this._cursos}"></horario-clases> -->
 
-            <my-reportes class="component-margin" ?active="${this._page === 'my-reportes'}"></my-reportes>
+          ${this._page !== 'certificado-alumno-regular'? html`
+            <my-reportes class="component-margin"></my-reportes>
+          `:''}
+
+          ${this._page !== 'resumen-academico'? html`
+            <my-certificados class="component-margin"></my-certificados>
+          `:''}
             
-            <my-certificados class="component-margin" ?active="${this._page === 'my-certificados'}"></my-certificados>
-
         </div>
 
         <div id="footer">
